@@ -19,23 +19,6 @@ Submitted to:
 Dr. Mohamed Shalan
 Spring 21
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-GitHub repo link: 
-https://github.com/chrisamgad/Project2-EmbeddedSystems
-
 Project Idea:
 The main idea is to develop a liquid level indicator, a simple mechanism to measure the level/depth of liquid inside a container. We will use a pressure sensor to calculate the liquid depth and output high, medium, and low according to the immersion depth of liquid. Nowadays, factories and chemical plants are storing liquids in overhead tanks using pumps. When the water is stored in the tank/container, nobody can recognize an accurate liquid depth down to the bottom of the tank/container. Not tracking the depth of the liquid carefully may result in major problems, and sometimes disasters especially in chemical plants such as having an overflow of toxic liquid in the tank resulting in not just wasting energy and money, but also potentially exposing individuals to danger. To resolve this, we have thought of developing a liquid level monitoring system that generates the liquid depth, where a buzzer will produce a beep sound as an alarm if the depth of the liquid was beyond a specified threshold depth. We will also be sending the current liquid depth to be displayed on a web server constantly to be monitored by a group of engineers in the control room. On a small scale, we will be doing our project on water for simplicity.
 
