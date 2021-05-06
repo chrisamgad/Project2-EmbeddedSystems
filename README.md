@@ -6,6 +6,8 @@ https://github.com/chrisamgad/Project2-EmbeddedSystems
 Folder containing Presentation and slides link:
 https://drive.google.com/drive/folders/1Xi24b90M7S0XWpfNvOQFmxRoCfGsfB9i
 
+Demo Prototype 1:
+https://drive.google.com/file/d/1AlHKBb-8y5lhWUE6whyIiaD2Bf_UlwFG/view?usp=sharing
 
 Embedded Systems
 <br/>
