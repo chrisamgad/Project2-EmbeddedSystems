@@ -83,6 +83,8 @@ Since the gravitational field and density of liquid are constants, we are able t
 * Longer wires affected the results
 ## Current Status
 * We have developed a tank water level system that monitors the water level successfully, sending out depth results on Teraterm.
+![Screenshot_1](https://user-images.githubusercontent.com/42348385/117244231-f662be00-ae38-11eb-946f-70bc793ad20c.png)
+![Screenshot_10](https://user-images.githubusercontent.com/42348385/117244683-ca940800-ae39-11eb-8deb-c070ec77e6c4.png)
 
 ## Next Milestone
 * Connect the ESP32 with the web server where data coming from the microcontroller
