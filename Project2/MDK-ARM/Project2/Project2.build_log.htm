@@ -5,7 +5,7 @@
 <h2>Tool Versions:</h2>
 IDE-Version: µVision V5.34.0.0
 Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: Chris Anwar, Student, LIC=----
+License Information: Chris Amgad, Student, LIC=----
  
 Tool Versions:
 Toolchain:       MDK-Lite  Version: 5.34.0.0
@@ -28,10 +28,10 @@ Project File Date:  05/05/2021
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Project2'
 compiling main.c...
-../Core/Src/main.c(288): warning:  #188-D: enumerated type mixed with another type
-  		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12, 1);
-../Core/Src/main.c(290): warning:  #188-D: enumerated type mixed with another type
-  		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12, 0);
+../Core/Src/main.c(287): warning:  #188-D: enumerated type mixed with another type
+  		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12, 0); //Turn on alarm
+../Core/Src/main.c(289): warning:  #188-D: enumerated type mixed with another type
+  		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12, 1);//Turn off alarm
 ../Core/Src/main.c: 2 warnings, 0 errors
 linking...
 Program Size: Code=13116 RO-data=508 RW-data=16 ZI-data=1336  
@@ -60,7 +60,7 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE:5.4.0
       Include file:  CMSIS\Core\Include\tz_context.h
-Build Time Elapsed:  00:00:05
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>

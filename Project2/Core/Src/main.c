@@ -61,20 +61,18 @@ static void MX_USART2_UART_Init(void);
 /* USER CODE BEGIN PFP */
 void resetSensor(void)
 {
-  /* Set Motorola mode */
-  // hspi.Instance->CR2 &= ~SPI_CR2_FRF_Msk;
+ 
   hspi1.Init.CLKPolarity       = SPI_POLARITY_LOW;
   hspi1.Init.CLKPhase          = SPI_PHASE_1EDGE;
   hspi1.Init.TIMode            = SPI_TIMODE_DISABLE;
   HAL_SPI_Init(&hspi1);
 
-  /* Reset MS5540C Sensor */
+  // Reset MS5540C Sensor
   uint32_t resetBuffer[2] = {0x0015, 0x5540};
   HAL_SPI_Transmit(&hspi1, (uint8_t *) resetBuffer, 2, 5000);
 
-  /* Set TI mode */
-  // hspi.Instance->CR2 |= _CR2_FRF_Msk;
-  hspi1.Init.TIMode            = SPI_TIMODE_ENABLE;
+  // Set TI mode 
+  hspi1.Init.TIMode= SPI_TIMODE_ENABLE;
   HAL_SPI_Init(&hspi1);
 }
 /* USER CODE END PFP */
@@ -137,14 +135,12 @@ int main(void)
 	uint16_t txBuffer;
   uint16_t rxBuffer;
 
-  /* The MS5540C device does not need a 'chip select' signal. Instead there is
-   * a START sequence (3-bit high) before each SETUP sequence and a STOP
-   * sequence (3-bit low) after each SETUP sequence.
-   */
+	//Note: The MS5540C device does not have a CS signal. Instead there is  a START sequence (3-bit high) before each SETUP sequence and a STOP sequence (3-bit low) after each SETUP sequence.
+   
 
   resetSensor();
 
-  /*##-2- Read calibration data (factory calibrated) from PROM of MS5540C ####*/
+  //2- Read calibration data (factory calibrated) from PROM of MS5540C 
   uint16_t word1, word2, word3, word4;
   /* Get Calibration word 1 */
   txBuffer = 0x1D50;
@@ -167,7 +163,7 @@ int main(void)
   resetSensor();
 
 
-  /* Get Calibration word 3 */
+  //Get Calibration word 3 
   txBuffer = 0x1D90;
   rxBuffer = 0;
   HAL_SPI_Transmit(&hspi1, (uint8_t *) &txBuffer, 1, 5000);
@@ -177,7 +173,7 @@ int main(void)
 
   resetSensor();
 
-  /* Get Calibration word 4 */
+  //Get Calibration word 4 
   txBuffer = 0x1DA0;
   rxBuffer = 0;
   HAL_SPI_Transmit(&hspi1, (uint8_t *) &txBuffer, 1, 5000);
@@ -185,7 +181,8 @@ int main(void)
   HAL_SPI_TransmitReceive(&hspi1, (uint8_t *) &txBuffer, (uint8_t *) &rxBuffer, 1, 5000);
   word4 = rxBuffer;
 
-  /*##-3- Convert calibration data into coefficients #########################*/
+	//Step 3
+  //Convert calibration data into coefficients 
   uint16_t c1 = (word1 >> 1) & 0x7FFF; // Pressure sensitivity
   uint16_t c2 = ((word3 & 0x003F) << 6) | (word4 & 0x003F); // Pressure offset
   uint16_t c3 = (word4 >> 6) & 0x03FF;
@@ -206,7 +203,6 @@ int main(void)
   HAL_Delay(36); // wait for end of conversion (can be an interrupt on MISO)
   txBuffer = 0;
   HAL_SPI_TransmitReceive(&hspi1, (uint8_t *) &txBuffer, (uint8_t *) &rxBuffer, 1, 5000);
-  // uint16_t d1 = rxBuffer;
   uint16_t d1 = (rxBuffer << 1) & 0xFFFF;
 
   resetSensor();
@@ -215,7 +211,8 @@ int main(void)
   HAL_SPI_Init(&hspi1);
 
 
-  /*##-5- Read digital temperature value from MS5540C ########################*/
+  // Step 5
+	//	Read digital temperature value from MS5540C 
   txBuffer = 0x0F20;
   rxBuffer = 0;
   HAL_SPI_Transmit(&hspi1, (uint8_t *) &txBuffer, 1, 5000);
@@ -249,12 +246,12 @@ int main(void)
 	if(counter==1)
 	{	
 		double ErrorPressureInitial=PressureInitial-pressure;
-		if(abs(ErrorPressureInitial)>1)
-			counter=0;
+		if(abs(ErrorPressureInitial)>1) //if differance between first and second pressure readings were not very big 
+			counter=0; //reset counter to 0 and don't start calculating the water depth until a valid inital pressure value is taken
 		else
 			{
-				PressureInitial=pressure;
-				counter++;
+				PressureInitial=pressure; //if valid initial pressure value(referance pressure) is taken 
+				counter++;// increment counter
 			}
 	}
 	else
@@ -268,26 +265,28 @@ int main(void)
 	CurrentDepth=CurrentDepth*100; //To CM
 
 
+	//For Debugging purposes
 	/*uint8_t out[10];
 	sprintf((char  *)out,"%f",pressure);
 	HAL_UART_Transmit(&huart2, "pressure is now ",sizeof("pressure is now "),200);
-	HAL_UART_Transmit(&huart2, out,sizeof(out),200);*/
-	//HAL_UART_Transmit(&huart2, "\n",sizeof("\n"),200);
-	//HAL_UART_Transmit(&huart2, "\r",sizeof("\r"),200);
+	HAL_UART_Transmit(&huart2, out,sizeof(out),200);
+	HAL_UART_Transmit(&huart2, "\n",sizeof("\n"),200);
+	HAL_UART_Transmit(&huart2, "\r",sizeof("\r"),200);
+	*/
+		
 	uint8_t out2[10];
-	int temp=(int)CurrentDepth;//for removing decimal places from CurrentDepth
-	sprintf((char  *)out2,"%d",temp);
+	int depth=(int)CurrentDepth;//for removing decimal places from CurrentDepth
+	sprintf((char  *)out2,"%d",depth);
 
-	HAL_UART_Transmit(&huart2, out2,sizeof(out2),200);
-	//HAL_UART_Transmit(&huart2, "cm",sizeof("cm"),200);
+	HAL_UART_Transmit(&huart2, out2,sizeof(out2),200); //transmit the depth to teraterm
 	HAL_UART_Transmit(&huart2, "\r",sizeof("\r"),200);
 	HAL_UART_Transmit(&huart2, "\n",sizeof("\n"),200);
 
 
-	if(temp<=2)
-		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12, 1);
+	if(depth<=2) //if depth was below 2 cm
+		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12, 0); //Turn on alarm
 	else
-		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12, 0);
+		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12, 1);//Turn off alarm
 	}
   
   }
