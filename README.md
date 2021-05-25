@@ -121,7 +121,7 @@ Since the gravitational field and density of water are constants, we are able to
 
 initial pressure: The current pressue before applying water
 
-* gravitational field= 9.81 kg/m^2
+* gravitational field= 9.81m/s^2
 * Density of water= 997 kg/m³
 * PressureDiff=(Pressure-PressureInitial)*100;        //convertion from millibar(mbar) into pascal
 * CurrentDepth=PressureDiff/(1000*9.81);               //current depth in metres
