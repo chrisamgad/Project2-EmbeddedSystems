@@ -42,8 +42,12 @@ const char* password = "meshmeshh";
 
 
 void setup() {
-
-
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  Serial2.begin(9600,SERIAL_8N1,RXD2,TXD2);
+  Serial.println("Serial Txd is on pin: "+String(TX));
+  Serial.println("Serial Rxd is on pin: "+String(RX));
+  pinMode(led,OUTPUT);
 //ESP32 connects to your wifi -----------------------------------
   WiFi.mode(WIFI_STA); //Connectto your wifi
   WiFi.begin(ssid, password);
@@ -80,8 +84,6 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  digitalWrite(led,HIGH);
   
   while(Serial2.available()) //while we're reciving data through the uart from the STM32 board microcontroller
   {
