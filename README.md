@@ -123,6 +123,9 @@ We believe that our project is beneficial as the world’s water resources becom
 
 ## References
 https://cdn.shopify.com/s/files/1/0672/9409/files/water_depth_sensor_MS5540C_Arduino_tutorial.pdf?698
+
 https://cdn.shopify.com/s/files/1/0672/9409/files/MS5540C_datasheet.pdf?616
+
 https://store.fut-electronics.com/products/under-water-depth-sensor
-  
+
+https://www.watelectronics.com/simple-water-level-alarm-circuit/
