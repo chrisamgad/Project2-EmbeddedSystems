@@ -1,5 +1,8 @@
 # Project2- Tank Water level Monitoring System
 
+* For this project, we developed a Tank Water level Monitoring System for Embedded systems using STM32CubeMX and Keil μVision running it on the Nucleo-32 board.
+
+***
 GitHub repo link: 
 https://github.com/chrisamgad/Project2-EmbeddedSystems
 
@@ -12,13 +15,7 @@ https://drive.google.com/file/d/1AlHKBb-8y5lhWUE6whyIiaD2Bf_UlwFG/view?usp=shari
 Final Demo:
 https://drive.google.com/file/d/1yKsco7V7HbetCimNSc1AXJ9aL4a1K94U/view?usp=drivesdk
 
-Embedded Systems
-<br/>
-CSCE 4301 Section 2
-<br/>
-Project II Proposal
-<br/>
-`Spring 21`
+***
 
 
 ### Submitted by Group #4:
@@ -26,7 +23,7 @@ Project II Proposal
 * Hassan El Rashidy - https://github.com/HassanELRashidy
 * Mariam Farghaly - https://github.com/Mariamfarghaly99
 
-## Submitted to:
+### Submitted to:
 Dr. Mohamed Shalan
 
 ## Project Statement:
@@ -129,7 +126,8 @@ Since the gravitational field and density of water are constants, we are able to
 * CurrentDepth=PressureDiff/(1000*9.81);               //current depth in metres
 * CurrentDepth=CurrentDepth*100;                       //convertion from metres to centimeter
 
-![WhatsApp Image 2021-04-19 at 3 54 19 AM](https://user-images.githubusercontent.com/68485300/115169360-13b82e00-a0be-11eb-9ab1-f2e01174a4dd.jpeg)
+![Screen Shot 2021-05-25 at 8 20 26 PM](https://user-images.githubusercontent.com/75340968/119548639-b4250080-bd96-11eb-9e64-2bd56af15a82.png)
+
 
 ## Technical Challenges
 * Applying the melted wax without damaging the sensor to isolate all the metal contacts
@@ -160,14 +158,11 @@ For future Engineers, we can include the GSM-based system where the message will
 We believe that our project is beneficial as the world’s water resources become increasingly stressed, so our tank water level monitoring system become more crucial. It is possible for future work to be utilized in a centralized control of all the dams using wireless technology under the control of the government which would be beneficial to the whole country.
 
 ## References
-https://cdn.shopify.com/s/files/1/0672/9409/files/water_depth_sensor_MS5540C_Arduino_tutorial.pdf?698
-
-https://cdn.shopify.com/s/files/1/0672/9409/files/MS5540C_datasheet.pdf?616
-
-https://store.fut-electronics.com/products/under-water-depth-sensor
-
-https://www.watelectronics.com/simple-water-level-alarm-circuit/
-
-https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/uart.html
-
-https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/protocols/esp_http_server.html
+* https://cdn.shopify.com/s/files/1/0672/9409/files/water_depth_sensor_MS5540C_Arduino_tutorial.pdf?698
+* https://cdn.shopify.com/s/files/1/0672/9409/files/MS5540C_datasheet.pdf?616
+* https://store.fut-electronics.com/products/under-water-depth-sensor
+* https://www.watelectronics.com/simple-water-level-alarm-circuit/
+* https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/uart.html
+* https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/protocols/esp_http_server.html
+* https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf
+* https://www.st.com/resource/en/datasheet/stm32l432kc.pdf
