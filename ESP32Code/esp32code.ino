@@ -49,11 +49,6 @@ void setup() {
   Serial.println("Serial Rxd is on pin: "+String(RX));
   pinMode(led,OUTPUT);
 
-  /*
-//ESP32 As access point
-  WiFi.mode(WIFI_AP); //Access Point mode
-  WiFi.softAP(ssid, password);
-*/
 //ESP32 connects to your wifi -----------------------------------
   WiFi.mode(WIFI_STA); //Connectto your wifi
   WiFi.begin(ssid, password);
@@ -92,9 +87,6 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   digitalWrite(led,HIGH);
-  //delay(500);
-  //digitalWrite(led,LOW);
-  //delay(500);
   
   while(Serial2.available()) //while we're reciving data through the uart from the STM32 board microcontroller
   {
