@@ -135,7 +135,7 @@ Since the gravitational field and density of water are constants, we are able to
 * Welding the metal without damaging the white gel
 * The isolation chemical affects the connections to the sensor since the connected wires would slip off constantly
 * Longer wires affected the results. -> The solution we have found was to make a hole in the bottom of the cup and insert the water level sensor and ceiling the opening using a sealing wax gun.
-
+* The first captured pressure value (Reference pressure value at the bottom of the beaker) on reset were invalid sometimes --> solution: we added a verification piece of code on reset that checks if the differance between the first and second pressure reading is not a huge number. If the differance between the first and second pressure readings was more than a pre-defined value, Capture the first reading again and repeat verification, else start collecting the pressure values and calculating the depth.
 
 ## Demo
 * We have developed a tank water level system that monitors the water level successfully, sending out depth results to be displayed on the webserver using the 
