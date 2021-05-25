@@ -9,6 +9,9 @@ https://drive.google.com/drive/folders/1Xi24b90M7S0XWpfNvOQFmxRoCfGsfB9i
 Demo Prototype 1:
 https://drive.google.com/file/d/1AlHKBb-8y5lhWUE6whyIiaD2Bf_UlwFG/view?usp=sharing
 
+Final Demo:
+https://drive.google.com/file/d/1yKsco7V7HbetCimNSc1AXJ9aL4a1K94U/view?usp=drivesdk
+
 Embedded Systems
 <br/>
 CSCE 4301 Section 2
@@ -131,11 +134,8 @@ Since the gravitational field and density of water are constants, we are able to
 * Applying the melted wax without damaging the sensor to isolate all the metal contacts
 * Welding the metal without damaging the white gel
 * The isolation chemical affects the connections to the sensor since the connected wires would slip off constantly
-* Longer wires affected the results. -> The solution we have found was to make a hole in the bottom of the cup and insert the water level sensor and ceiling the opening
+* Longer wires affected the results. -> The solution we have found was to make a hole in the bottom of the cup and insert the water level sensor and ceiling the opening using a sealing wax gun.
 
-## Limitations
-* Maximum height that can be measured is 8 cm
-* We couldn't remove water gradually
 
 ## Demo
 * We have developed a tank water level system that monitors the water level successfully, sending out depth results to be displayed on the webserver using the 
