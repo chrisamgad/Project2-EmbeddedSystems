@@ -237,7 +237,7 @@ int main(void)
   /* Calibration temperature compensated pressure */
   double pressure = (((x * 10) >> 5) + 2500) / 10.0;
 
-	//For stability
+	//To ensure that the Intial pressure reading wasn't a fluke
 	if(counter==0)
 	{	
 		PressureInitial=pressure;
@@ -251,7 +251,7 @@ int main(void)
 		else
 			{
 				PressureInitial=pressure; //if valid initial pressure value(referance pressure) is taken 
-				counter++;// increment counter
+				counter++; // increment counter
 			}
 	}
 	else
@@ -262,7 +262,7 @@ int main(void)
 	{
 	PressureDiff=abs(pressure-PressureInitial)*100; //convertion into pascal
 	CurrentDepth=PressureDiff/(1000*9.81); //Current Depth in Metres
-	CurrentDepth=CurrentDepth*100; //To CM
+	CurrentDepth=CurrentDepth*100; //Convert depth to cm
 
 
 	//For Debugging purposes
@@ -279,11 +279,11 @@ int main(void)
 	sprintf((char  *)out2,"%d",depth);
 
 	HAL_UART_Transmit(&huart2, out2,sizeof(out2),200); //transmit the depth to teraterm
-	HAL_UART_Transmit(&huart2, "\r",sizeof("\r"),200);
-	HAL_UART_Transmit(&huart2, "\n",sizeof("\n"),200);
+	HAL_UART_Transmit(&huart2, "\r",sizeof("\r"),200); 
+	HAL_UART_Transmit(&huart2, "\n",sizeof("\n"),200); // to end line
 
 
-	if(depth<=2) //if depth was below 2 cm
+	if(depth<=2) //if depth goes below 2 cm
 		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12, 0); //Turn on alarm
 	else
 		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12, 1);//Turn off alarm
