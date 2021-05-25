@@ -66,6 +66,36 @@ The main idea is to develop a tank water level indicator, a simple mechanism to 
 ## Stm32cube configurations:
 ![WhatsApp Image 2021-05-25 at 6 43 45 PM](https://user-images.githubusercontent.com/75340968/119536417-5c33cd00-bd89-11eb-9a73-dd5bfb4c78b1.jpeg)
 
+- Pins Used For SPI on stm32:
+```bash
+STM32     MS5540C
+A5     -> Dout     
+A6     -> Din
+D9     -> MCLK
+A1     -> SCLK
+5V     -> VCC
+GND    -> GND
+```
+- Pins Used For Led:
+```bash
+STM32     LED
+D2     -> +ve 
+GND    -> -ve   
+```
+- Pins Used For Buzzer:
+```bash
+STM32     Buzzer
+D2     -> +ve 
+GND    -> -ve   
+```
+- Pins Used For ESP32 :
+```bash
+STM32     ESP32
+A7     -> RX(GPIO16)
+A2     -> TX(GPIO17)   
+GND    -> GND
+```
+
 ## Languages used:
 * C 
 * HTML
