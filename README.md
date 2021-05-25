@@ -122,9 +122,10 @@ Since the gravitational field and density of water are constants, we are able to
 ![Capture2](https://user-images.githubusercontent.com/68485300/119531135-eda04080-bd83-11eb-8cf8-60900b8f2c9b.JPG)
 
 * Initial pressure= the current pressue before applying water
+* Pressure (at the bottom of the cup) = current pressure readings from the MS5540C Sensor
 * gravitational field= 9.81 m/s^2
 * Density of water= 997 kg/m³ approximately 1000 kg/m³
-* PressureDiff=(Pressure-PressureInitial)*100;        //convertion from millibar(mbar) into pascal
+* PressureDiff=(Pressure-Initial Pressure)*100;        //convertion from millibar(mbar) into pascal
 * CurrentDepth=PressureDiff/(1000*9.81);               //current depth in metres
 * CurrentDepth=CurrentDepth*100;                       //convertion from metres to centimeter
 
@@ -138,10 +139,20 @@ Since the gravitational field and density of water are constants, we are able to
 * The first captured pressure value (Reference pressure value at the bottom of the beaker) on reset were invalid sometimes --> solution: we added a verification piece of code on reset that checks if the differance between the first and second pressure reading is not a huge number. If the differance between the first and second pressure readings was more than a pre-defined value, Capture the first reading again and repeat verification, else start collecting the pressure values and calculating the depth.
 
 ## Demo
-* We have developed a tank water level system that monitors the water level successfully, sending out depth results to be displayed on the webserver using the 
+* We have developed a tank water level system that monitors the water level successfully, sending out water depth results to be displayed on the webserver using the ESP32 in centimeters.
 
-![Screenshot_1](https://user-images.githubusercontent.com/42348385/117244231-f662be00-ae38-11eb-946f-70bc793ad20c.png)
+## Prototype 1 connections
+![WhatsApp Image 2021-05-25 at 7 49 45 PM](https://user-images.githubusercontent.com/75340968/119544896-7920ce00-bd92-11eb-8a8d-78cf7424e076.jpeg)
+
 ![Screenshot_10](https://user-images.githubusercontent.com/42348385/117244683-ca940800-ae39-11eb-8deb-c070ec77e6c4.png)
+
+## Final Demo connections
+
+![WhatsApp Image 2021-05-25 at 7 54 46 PM](https://user-images.githubusercontent.com/75340968/119545476-25fb4b00-bd93-11eb-972d-18c16b639800.jpeg)
+
+![WhatsApp Image 2021-05-25 at 7 18 59 PM](https://user-images.githubusercontent.com/75340968/119544498-0dd6fc00-bd92-11eb-8665-1a5eb0f48055.jpeg)
+
+![Screen Shot 2021-05-25 at 7 48 35 PM](https://user-images.githubusercontent.com/75340968/119544968-8ccc3480-bd92-11eb-9a56-9ee33d4e272b.png)
 
 ## Future Work
 For future Engineers, we can include the GSM-based system where the message will be sent to the particular authorized person when the water level is below the required level. 
