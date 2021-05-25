@@ -27,7 +27,7 @@ Project II Proposal
 Dr. Mohamed Shalan
 
 ## Project Statement:
-The main idea is to develop a tank water level indicator, a simple mechanism to measure the level/depth of water inside a tank. We will use a pressure sensor to calculate the water depth and output depth according to the immersion depth of water. Nowadays, water is stored in the tank/container, nobody can recognize an accurate water depth down to the bottom of the tank/container. Not tracking the depth of the water carefully may result in major problems. To resolve this, we have thought of developing a tank water liquid level system that generates the water depth, where a buzzer will produce a beep sound as an alarm if the depth of the water was beyond a specified threshold depth. We send the current water depth to be displayed on a web server constantly to be monitored by a group of engineers in the control room. We connected the ESP32 with the web server where data coming from the microcontroller and displayed final results webserver on ESP32 webserver
+The main idea is to develop a tank water level indicator, a simple mechanism to measure the level/depth of water inside a tank. We use a pressure sensor to calculate the water depth and output depth according to the immersion depth of water. Nowadays, water is stored in the tank/container, nobody can recognize an accurate water depth down to the bottom of the tank/container. Not tracking the depth of the water carefully may result in major problems. To resolve this, we developed a tank water level monitoring system that generates the water depth, where a buzzer produce a beep sound as an alarm if the depth of the water was beyond a specified threshold depth. We send the current water depth to be displayed on a web server constantly to be monitored by a group of engineers in the control room. We connected the ESP32 with the web server where data coming from the microcontroller and displayed final results webserver on ESP32 webserver
 
 ## Advantages:
 * Without water level indicators in a water tank, you would have to manually check whether enough water is in the tank, and should your tank ever go above a level threshold, it could mean your final results may be incorrect, and even sometimes cause disasters. Tank water level indicators allow you to remotely monitor the water level and take corrective actions automatically so you can focus on more important issues.
@@ -66,10 +66,14 @@ The main idea is to develop a tank water level indicator, a simple mechanism to 
 ## Software Architecture:
 This is the flowchart of our system. We donot use FreeRTOS because we didnot need to use it. We had communications between two devices(microcontroller and water level sensor) and then sending our results to the ESP32, so there is no priorities in the tasks.
 
+![Capture3](https://user-images.githubusercontent.com/68485300/119531281-0dcfff80-bd84-11eb-8e6c-cb6f9864e7bb.JPG)
+
 ## Hardware:
 
 * ESP32
  We used the ESP32 to interface with stm32 microcontroller to display the final results webserver because the ESP32 provides Wi-Fi.
+ 
+![WhatsApp Image 2021-05-25 at 6 06 56 PM](https://user-images.githubusercontent.com/68485300/119532474-34426a80-bd85-11eb-9408-1d1697525cea.jpeg)
 
 * MS5540C Sensor
  
@@ -86,19 +90,19 @@ This is the flowchart of our system. We donot use FreeRTOS because we didnot nee
 
 ***
 
-## Initial Design: 
-![Screenshot_7](https://user-images.githubusercontent.com/42348385/115172829-554cd700-a0c6-11eb-97b2-e963fa8659d4.png)
+## Design: 
+![Capture](https://user-images.githubusercontent.com/68485300/119531099-e6793280-bd83-11eb-8491-25f5c00927fe.JPG)
 
-Since the gravitational field and density of liquid are constants, we are able to calculate the liquid depth within a container, given that we know the density of a liquid and the gravitational field. Assuming, we’ll be working on water, Water depth can be calculated using the following formula. <br/>
-![Screenshot_8](https://user-images.githubusercontent.com/42348385/115172917-7a414a00-a0c6-11eb-9a41-e3cb5a8d04bb.png)
+Since the gravitational field and density of water are constants, we are able to calculate the liquid depth within a container, given that we know the density of water and the gravitational field. Water depth can be calculated using the following formula. <br/>
+![Capture2](https://user-images.githubusercontent.com/68485300/119531135-eda04080-bd83-11eb-8cf8-60900b8f2c9b.JPG)
 
-Water Depth= pressure at the bottom of the cup-initial pressure/(Density of water* gravitational field)
 initial pressure: The current pressue before applying water
-gravitational field= 9.81 g
-Density of water= 997 kg/m³
-PressureDiff=(Pressure-PressureInitial)*100;        //convertion from millibar(mbar) into pascal
-CurrentDepth=PressureDiff/(1000*9.81);               //current depth in metres
-CurrentDepth=CurrentDepth*100;                       //convertion from metres to centimeter
+
+* gravitational field= 9.81 g
+* Density of water= 997 kg/m³
+* PressureDiff=(Pressure-PressureInitial)*100;        //convertion from millibar(mbar) into pascal
+* CurrentDepth=PressureDiff/(1000*9.81);               //current depth in metres
+* CurrentDepth=CurrentDepth*100;                       //convertion from metres to centimeter
 
 ![WhatsApp Image 2021-04-19 at 3 54 19 AM](https://user-images.githubusercontent.com/68485300/115169360-13b82e00-a0be-11eb-9ab1-f2e01174a4dd.jpeg)
 
