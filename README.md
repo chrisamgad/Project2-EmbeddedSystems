@@ -70,6 +70,7 @@ The main idea is to develop a tank water level indicator, a simple mechanism to 
 * C 
 * HTML
 * CSS
+* Ajax
 
 ***
 
@@ -82,7 +83,7 @@ This is the flowchart for pressue reading from the MS5540C Sensor
 
 ![Screen Shot 2021-05-25 at 6 28 10 PM](https://user-images.githubusercontent.com/75340968/119536474-681f8f00-bd89-11eb-93ed-417e2008184f.png)
 
-## Hardware:
+## Hardware Description not covered in lab:
 
 * ESP32
 
@@ -118,7 +119,7 @@ Since the gravitational field and density of water are constants, we are able to
 ![Capture2](https://user-images.githubusercontent.com/68485300/119531135-eda04080-bd83-11eb-8cf8-60900b8f2c9b.JPG)
 
 * Initial pressure= the current pressue before applying water
-* gravitational field= 9.81 g
+* gravitational field= 9.81 m/s^2
 * Density of water= 997 kg/m³ approximately 1000 kg/m³
 * PressureDiff=(Pressure-PressureInitial)*100;        //convertion from millibar(mbar) into pascal
 * CurrentDepth=PressureDiff/(1000*9.81);               //current depth in metres
