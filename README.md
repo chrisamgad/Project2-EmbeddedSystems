@@ -76,6 +76,21 @@ This is the flowchart of our system. We donot use FreeRTOS because we didnot nee
 ![WhatsApp Image 2021-05-25 at 6 06 56 PM](https://user-images.githubusercontent.com/68485300/119532474-34426a80-bd85-11eb-9408-1d1697525cea.jpeg)
 
 * MS5540C Sensor
+
+The MS5540C pressure sensor measures absolute water/ air pressure/ temperature. Thus we used it to measure water depth in water level in tank.
+It carries a metal protection cap filled with silicon gel to ensure protection against the water
+
+* 10 - 1100 mbar absolute pressure range
+* 6 coefficients for software compensation stored on-
+chip
+* Piezoresistive silicon micromachined sensor
+* Integrated miniature pressure sensor 6.2 x 6.4 mm
+* 16 Bit ADC
+* 3-wire serial interface
+* 1 system clock line (32.768 kHz)
+* Low voltage and low power consumption
+* High Endurance (HE version)
+
  
 ![Picture1](https://user-images.githubusercontent.com/75340968/119527759-ecb9df80-bd80-11eb-94e4-bd9022257450.png)
 
