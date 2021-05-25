@@ -42,12 +42,7 @@ const char* password = "meshmeshh";
 
 
 void setup() {
-  // put your setup code here, to run once:
-  Serial.begin(9600);
-  Serial2.begin(9600,SERIAL_8N1,RXD2,TXD2);
-  Serial.println("Serial Txd is on pin: "+String(TX));
-  Serial.println("Serial Rxd is on pin: "+String(RX));
-  pinMode(led,OUTPUT);
+
 
 //ESP32 connects to your wifi -----------------------------------
   WiFi.mode(WIFI_STA); //Connectto your wifi
