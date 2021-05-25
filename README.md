@@ -20,7 +20,7 @@ Project II Proposal
 
 ### Submitted by Group #4:
 * Chris Amgad- 900170819
-* Hassan El Rashidy- 900163312
+* Hassan El Rashidy- 900163312 - https://github.com/HassanELRashidy
 * Mariam Farghaly-900170254
 
 ## Submitted to:
