@@ -63,10 +63,17 @@ The main idea is to develop a tank water level indicator, a simple mechanism to 
 
 ***
 
+## Stm32cube configurations:
+![WhatsApp Image 2021-05-25 at 6 43 45 PM](https://user-images.githubusercontent.com/75340968/119536417-5c33cd00-bd89-11eb-9a73-dd5bfb4c78b1.jpeg)
+
+
 ## Software Architecture:
 This is the flowchart of our system. We donot use FreeRTOS because we didnot need to use it. We had communications between two devices(microcontroller and water level sensor) and then sending our results to the ESP32, so there is no priorities in the tasks.
 
 ![Capture3](https://user-images.githubusercontent.com/68485300/119531281-0dcfff80-bd84-11eb-8e6c-cb6f9864e7bb.JPG)
+
+This is the flowchart for pressue reading from the MS5540C Sensor
+![Screen Shot 2021-05-25 at 6 28 10 PM](https://user-images.githubusercontent.com/75340968/119536474-681f8f00-bd89-11eb-93ed-417e2008184f.png)
 
 ## Hardware:
 
@@ -148,3 +155,7 @@ https://cdn.shopify.com/s/files/1/0672/9409/files/MS5540C_datasheet.pdf?616
 https://store.fut-electronics.com/products/under-water-depth-sensor
 
 https://www.watelectronics.com/simple-water-level-alarm-circuit/
+
+https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/uart.html
+
+https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/protocols/esp_http_server.html
