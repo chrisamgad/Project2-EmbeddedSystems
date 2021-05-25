@@ -79,10 +79,6 @@ This is the flowchart of our system. We donot use FreeRTOS because we didnot nee
 
 ![Capture3](https://user-images.githubusercontent.com/68485300/119531281-0dcfff80-bd84-11eb-8e6c-cb6f9864e7bb.JPG)
 
-This is the flowchart for pressue reading from the MS5540C Sensor
-
-![Screen Shot 2021-05-25 at 6 28 10 PM](https://user-images.githubusercontent.com/75340968/119536474-681f8f00-bd89-11eb-93ed-417e2008184f.png)
-
 ## Hardware Description not covered in lab:
 
 * ESP32
@@ -154,7 +150,7 @@ Since the gravitational field and density of water are constants, we are able to
 ![Screen Shot 2021-05-25 at 7 48 35 PM](https://user-images.githubusercontent.com/75340968/119544968-8ccc3480-bd92-11eb-9a56-9ee33d4e272b.png)
 
 ## Future Work
-For future Engineers, we can include the GSM-based system where the message will be sent to the particular authorized person when the water level is below the required level. 
+For future Engineers, the system can include a message that will be sent to the particular authorized person when the water level is below the required level. 
 
 We believe that our project is beneficial as the world’s water resources become increasingly stressed, so our tank water level monitoring system become more crucial. It is possible for future work to be utilized in a centralized control of all the dams using wireless technology under the control of the government which would be beneficial to the whole country.
 
