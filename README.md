@@ -89,7 +89,8 @@ This is the flowchart for pressue reading from the MS5540C Sensor
 
  We used the ESP32 to interface with stm32 microcontroller to display the final results webserver because the ESP32 provides Wi-Fi.
  
-![WhatsApp Image 2021-05-25 at 6 06 56 PM](https://user-images.githubusercontent.com/68485300/119532474-34426a80-bd85-11eb-9408-1d1697525cea.jpeg)
+![WhatsApp Image 2021-05-25 at 8 23 19 PM](https://user-images.githubusercontent.com/75340968/119549104-2e558500-bd97-11eb-8524-7b191278ee19.jpeg)
+
 * MS5540C Sensor
 
 The MS5540C pressure sensor measures absolute water/ air pressure/ temperature. Thus we used it to measure water depth in water level in tank.
