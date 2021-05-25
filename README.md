@@ -71,8 +71,10 @@ This is the flowchart of our system. We donot use FreeRTOS because we didnot nee
 * ESP32
  We used the ESP32 to interface with stm32 microcontroller to display the final results webserver because the ESP32 provides Wi-Fi.
 
-* MS5540C Sensor 
-![Uploading Picture1.png…]()
+* MS5540C Sensor
+ 
+![Picture1](https://user-images.githubusercontent.com/75340968/119527759-ecb9df80-bd80-11eb-94e4-bd9022257450.png)
+
 
 ![WhatsApp Image 2021-05-25 at 5 22 41 PM](https://user-images.githubusercontent.com/75340968/119525363-b9765100-bd7e-11eb-8834-3c9c7e4ca9ce.jpeg)
 
@@ -89,6 +91,15 @@ This is the flowchart of our system. We donot use FreeRTOS because we didnot nee
 
 Since the gravitational field and density of liquid are constants, we are able to calculate the liquid depth within a container, given that we know the density of a liquid and the gravitational field. Assuming, we’ll be working on water, Water depth can be calculated using the following formula. <br/>
 ![Screenshot_8](https://user-images.githubusercontent.com/42348385/115172917-7a414a00-a0c6-11eb-9a41-e3cb5a8d04bb.png)
+
+Water Depth= pressure at the bottom of the cup-initial pressure/(Density of water* gravitational field)
+initial pressure: The current pressue before applying water
+gravitational field= 9.81 g
+Density of water= 997 kg/m³
+PressureDiff=(Pressure-PressureInitial)*100;        //convertion from millibar(mbar) into pascal
+CurrentDepth=PressureDiff/(1000*9.81);               //current depth in metres
+CurrentDepth=CurrentDepth*100;                       //convertion from metres to centimeter
+
 ![WhatsApp Image 2021-04-19 at 3 54 19 AM](https://user-images.githubusercontent.com/68485300/115169360-13b82e00-a0be-11eb-9ab1-f2e01174a4dd.jpeg)
 
 ## Technical Challenges
