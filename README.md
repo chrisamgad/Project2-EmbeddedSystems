@@ -80,11 +80,19 @@ Since the gravitational field and density of liquid are constants, we are able t
 * Applying the melted wax without damaging the sensor to isolate all the metal contacts
 * Welding the metal without damaging the white gel
 * The isolation chemical affects the connections to the sensor since the connected wires would slip off constantly
-* Longer wires affected the results
+* Longer wires affected the results. -> The solution we have found was to make a hole in the bottom of the cup and insert the water level sensor and ceiling the opening
+
+## Limitations
+* Maximum height that can be measured is 8 cm
+* We couldn't remove water gradually
+
 ## Current Status
 * We have developed a tank water level system that monitors the water level successfully, sending out depth results on Teraterm.
 ![Screenshot_1](https://user-images.githubusercontent.com/42348385/117244231-f662be00-ae38-11eb-946f-70bc793ad20c.png)
 ![Screenshot_10](https://user-images.githubusercontent.com/42348385/117244683-ca940800-ae39-11eb-8deb-c070ec77e6c4.png)
+
+## Future Work
+For future Engineers, we can include the GSM-based system where the message will be sent to the particular authorized person when the water level is below the required level.
 
 ## Next Milestone
 * Connect the ESP32 with the web server where data coming from the microcontroller
