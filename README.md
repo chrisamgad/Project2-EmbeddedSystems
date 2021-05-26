@@ -134,7 +134,7 @@ It carries a metal protection cap filled with silicon gel to ensure protection a
 * Durable
 
 
-## Block Diagram
+## Block Diagram of the MS5540C Sensor
 ![WhatsApp Image 2021-05-25 at 5 22 41 PM](https://user-images.githubusercontent.com/75340968/119525363-b9765100-bd7e-11eb-8834-3c9c7e4ca9ce.jpeg)
 
 
