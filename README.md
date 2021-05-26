@@ -179,7 +179,7 @@ Since the gravitational field and density of water are constants, we are able to
 ![Screen Shot 2021-05-25 at 7 48 35 PM](https://user-images.githubusercontent.com/75340968/119544968-8ccc3480-bd92-11eb-9a56-9ee33d4e272b.png)
 
 ## Future Work
-For future Engineers, the system can include a message that will be sent to the particular authorized person when the water level is below the required level. 
+For future engineers, the system can include a message that will be sent to the particular authorized person when the water level is below the required level. 
 
 We believe that our project is beneficial as the world’s water resources become increasingly stressed, so our tank water level monitoring system become more crucial. It is possible for future work to be utilized in a centralized control of all the dams using wireless technology under the control of the government which would be beneficial to the whole country.
 
