@@ -124,14 +124,15 @@ It carries a metal protection cap filled with silicon gel to ensure protection a
 
 ![Picture1](https://user-images.githubusercontent.com/75340968/119527759-ecb9df80-bd80-11eb-94e4-bd9022257450.png)
 
-* absolute pressure linear range: 10 - 1100 mbar
+* Pressure linear range: 10 - 1100 mbar
 * SPI serial interface used for all communications with a microcontroller
 * Integrated pressure sensor small sized (6.2 x 6.4 mm)
+* 1 system clock line (32.768 kHz)
 * 16 Bit ADC
 * Power Saver
 * Low voltage
-* 1 system clock line (32.768 kHz)
 * Durable
+
 
 ## Block Diagram
 ![WhatsApp Image 2021-05-25 at 5 22 41 PM](https://user-images.githubusercontent.com/75340968/119525363-b9765100-bd7e-11eb-8834-3c9c7e4ca9ce.jpeg)
