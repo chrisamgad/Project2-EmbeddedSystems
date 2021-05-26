@@ -51,7 +51,7 @@ The main idea is to develop a tank water level indicator, a simple mechanism to 
 
 ## Hardware Components:
 
-* STM32
+* STM32l432kc MCU
 * MS5540C Sensor (used to calculate the liquid depth)
 * ESP32
 * Jumper Wires
