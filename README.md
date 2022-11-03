@@ -1,4 +1,4 @@
-# Project2- Tank Water level Monitoring System
+# Tank Water level Monitoring System
 
 * For this project, we developed a Tank Water level Monitoring System for Embedded systems using STM32CubeMX, Keil μVision and Arduino IDE running it on the Nucleo-32 board.
 
